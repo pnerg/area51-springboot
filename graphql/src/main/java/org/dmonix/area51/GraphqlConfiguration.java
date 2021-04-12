@@ -26,7 +26,7 @@ public class GraphqlConfiguration {
     Character luke = new Character("Luke Skywalker", tatooine, human);
     Character kenobi = new Character("Obi-Wan Kenobi", tatooine, human);
     Character han = new Character("Han Solo", corellia, human);
-    Character chewie = new Character("Chewbacka", kashyyyk, wookie);
+    Character chewie = new Character("Chewbacca", kashyyyk, wookie);
 
     luke.addFiends(kenobi, han, chewie);
     han.addFiends(luke, chewie);
