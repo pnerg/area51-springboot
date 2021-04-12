@@ -13,6 +13,7 @@ lib_managed/
 src_managed/
 project/boot/
 project/plugins/project/
+.bsp
 
 # Ignore intellij project files
 .idea
