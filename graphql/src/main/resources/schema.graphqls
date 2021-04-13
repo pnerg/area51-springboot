@@ -1,5 +1,6 @@
 type Query {
     hero(name:String): Character
+    heroes: [Character]
 }
 
 type Character {

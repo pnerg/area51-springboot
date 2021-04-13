@@ -54,6 +54,7 @@ lazy val rest = (project in file("rest"))
 lazy val graphql = (project in file("graphql"))
   .settings(baseSettings)
   .settings(
+    mainClass in (Compile, run) := Some("org.dmonix.area51.SimpleGraphQLApplication"),
     libraryDependencies ++= Seq(
       `graphql-spring-boot-starter`,
       `graphql-java-tools`

@@ -10,16 +10,13 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class GraphqlConfiguration {
-  /**
-   * Prep the in-memory/fake character storage
-   *
-   * @return
-   */
+  /** Prep the in-memory/fake character storage */
   @Bean
   public CharacterStorage characterStorage() {
     Planet tatooine = new Planet("Tatooine", "desert");
     Planet kashyyyk = new Planet("Kashyyyk", "jungle");
     Planet corellia = new Planet("Corellia", "temperate");
+
     Species human = new Species("human", 80, new Planet("Earth", "temperate"));
     Species wookie = new Species("wookie", 200, kashyyyk);
 
@@ -30,24 +27,19 @@ public class GraphqlConfiguration {
 
     luke.addFiends(kenobi, han, chewie);
     han.addFiends(luke, chewie);
-    chewie.addFiends(luke, chewie);
+    chewie.addFiends(luke, han);
     kenobi.addFiends(luke);
 
     InMemoryCharacterStorage storage = new InMemoryCharacterStorage();
-
     storage.addCharacter(luke);
     storage.addCharacter(han);
     storage.addCharacter(kenobi);
-    storage.addCharacter(han);
+    storage.addCharacter(chewie);
+
     return storage;
   }
 
-  /**
-   * Create the graphql endpoint
-   *
-   * @param storage
-   * @return
-   */
+  /** Create the graphql endpoint The fake character storage bean is autowired/injected */
   @Bean
   public Query query(CharacterStorage storage) {
     return new Query(storage);
