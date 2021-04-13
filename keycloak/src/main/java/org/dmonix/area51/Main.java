@@ -8,14 +8,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class SimpleRestApplication {
+// @Import(SecurityConfig.class)
+public class Main {
 
   public static void main(String[] args) {
-    SpringApplication.run(SimpleRestApplication.class, args);
+    SpringApplication.run(Main.class, args);
   }
 
   @GetMapping("/hello")
   public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
     return String.format("Hello %s!", name);
+  }
+
+  @GetMapping("/secured/hello")
+  public String secured(@RequestParam(value = "name", defaultValue = "World") String name) {
+    return String.format("secured: Hello %s!", name);
   }
 }

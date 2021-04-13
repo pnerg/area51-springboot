@@ -11,7 +11,7 @@ It has two simple query operations
 
 # Architecture
 
-The starting point is the main app [SimpleGraphQLApplication](src/main/java/org/dmonix/area51/SimpleGraphQLApplication.java) which pretty much only bootstraps the app.   
+The starting point is the main app [Main](src/main/java/org/dmonix/area51/Main.java) which pretty much only bootstraps the app.   
 The `SimpleGraphQLApplication`enables the autowiring/configuration using [GraphqlConfiguration](src/main/java/org/dmonix/area51/GraphqlConfiguration.java) creating the following classes:
 * [InMemoryCharacterStorage](src/main/java/org/dmonix/area51/InMemoryCharacterStorage.java) implements the `CharacterStorage` interface for fetching characters.  
 Fake as it is it just illustrates the concept of fetching data from somewhere
@@ -53,7 +53,7 @@ would yield:
   }
 }
 ```
-###Some intel on Chewbacca and all his friends:
+### Some intel on Chewbacca and all his friends:
 
 ```graphql
 {

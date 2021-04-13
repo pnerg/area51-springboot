@@ -14,8 +14,8 @@ import org.springframework.context.annotation.Import;
 @SpringBootApplication
 @Import(GraphqlConfiguration.class)
 @EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class})
-public class SimpleGraphQLApplication {
+public class Main {
   public static void main(String[] args) {
-    SpringApplication.run(SimpleGraphQLApplication.class, args);
+    SpringApplication.run(Main.class, args);
   }
 }

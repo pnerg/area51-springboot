@@ -18,20 +18,18 @@ val baseSettings = Seq(
   publishArtifact in (Compile, packageSrc) := false,
   crossPaths := false,
   autoScalaLibrary := false,
+  excludeDependencies ++= `global-excludes`,
+  mainClass in (Compile, run) := Some("org.dmonix.area51.Main"),
   libraryDependencies ++= Seq(
     `spring-boot-autoconfigure`,
     `spring-boot-configuration-processor`,
     `spring-boot-starter-web`,
     `spring-boot-starter-actuator`,
     //`spring-boot-starter-security`, //adds automated login/security
+    `spring-boot-starter-jetty`,
     `spring-context-support`,
     `spring-tx`,
     `spring-retry`,
-    //`spring-security-crypto`,
-    //`spring-security-core`,
-    //`spring-security-config`,
-    //`spring-security-web`,
-    //`keycloak-spring-boot-starter`,
     `micrometer-registry-prometheus`,
     `jackson-base`,
     `jackson-databind`,
@@ -41,7 +39,7 @@ val baseSettings = Seq(
     `log4j-to-slf4j`,
     `javax.servlet-api`,
     json,
-    `tomcat-juli`,
+    //`tomcat-juli`,
     `spring-boot-starter-test` % Test
   )
 )
@@ -54,9 +52,17 @@ lazy val rest = (project in file("rest"))
 lazy val graphql = (project in file("graphql"))
   .settings(baseSettings)
   .settings(
-    mainClass in (Compile, run) := Some("org.dmonix.area51.SimpleGraphQLApplication"),
     libraryDependencies ++= Seq(
       `graphql-spring-boot-starter`,
       `graphql-java-tools`
+    )
+  )
+
+lazy val keycloak = (project in file("keycloak"))
+  .settings(baseSettings)
+  .settings(
+    libraryDependencies ++= Seq(
+      `keycloak-spring-boot-starter`,
+      //`spring-boot-starter-security`
     )
   )
