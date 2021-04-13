@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
+
 @SpringBootApplication
 @RestController
 // @Import(SecurityConfig.class)
@@ -21,7 +23,8 @@ public class Main {
   }
 
   @GetMapping("/secured/hello")
-  public String secured(@RequestParam(value = "name", defaultValue = "World") String name) {
-    return String.format("secured: Hello %s!", name);
+  public String secured(
+      @RequestParam(value = "name", defaultValue = "World") String name, Principal principal) {
+    return String.format("secured: Hello %s!", principal.getName());
   }
 }
