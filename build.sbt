@@ -44,7 +44,8 @@ val baseSettings = Seq(
   )
 )
 
-
+lazy val app = (project in file("app"))
+  .settings(baseSettings)
 
 lazy val rest = (project in file("rest"))
   .settings(baseSettings)
