@@ -10,7 +10,6 @@ import java.util.Optional;
 
 @Configuration
 public class StorageConfig {
-
   @Bean
   public Storage getStorage() {
     return new DummyStorage();

@@ -16,13 +16,13 @@ import java.util.List;
 public class Main implements InitializingBean {
   @Autowired private ServiceDiscovery serviceDiscovery;
 
-  // @Autowired private Storage storage;
-
   @Autowired(required = false)
   private List<Storage> storages = Collections.EMPTY_LIST;
 
   @Override
-  public void afterPropertiesSet() throws Exception {
+  public void afterPropertiesSet() {
+    System.out.println("ServiceDiscovery : " + serviceDiscovery.getClass().getName());
+    System.out.println("Storage classes:");
     storages.forEach(s -> System.out.println(s.getClass().getName()));
   }
 

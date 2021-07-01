@@ -2,6 +2,7 @@
 Playground for Spring boot
 
 sub-project to test individually:
+* [A simple app using variants of dependency injection](app)
 * [A simple REST based interface](rest)
 * [A graphql based interface](graphql)
 * [A OAuth2.0/OpenId connect secured application using Keycloak](keycloak)

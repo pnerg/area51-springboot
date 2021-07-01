@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
+import java.util.Optional;
 
 @SpringBootApplication
 @RestController
@@ -25,6 +26,7 @@ public class Main {
   @GetMapping("/secured/hello")
   public String secured(
       @RequestParam(value = "name", defaultValue = "World") String name, Principal principal) {
-    return String.format("secured: Hello %s!", principal.getName());
+    Optional<String> opt = Optional.ofNullable(principal).map(Principal::getName);
+    return String.format("secured: Hello %s!", opt.orElse(name));
   }
 }
