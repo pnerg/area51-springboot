@@ -16,8 +16,8 @@ object Dependencies extends AutoPlugin {
     )
 
     // spring framework
-    //val `spring-cloud-starter-consul-config` = "org.springframework.cloud" % "spring-cloud-starter-consul-config" % springCloudVersion
-    //"org.springframework.cloud" % "spring-cloud-starter-consul-discovery" % springCloudVersion
+    val `spring-cloud-starter-consul-config` = "org.springframework.cloud" % "spring-cloud-starter-consul-config" % springCloudVersion
+    val `spring-cloud-starter-consul-discovery` = "org.springframework.cloud" % "spring-cloud-starter-consul-discovery" % springCloudVersion
     //"org.springframework.cloud" % "spring-cloud-starter-zipkin" % springCloudVersion
 
     val `spring-boot-autoconfigure` = "org.springframework.boot" % "spring-boot-autoconfigure" % springBootVersion

@@ -67,3 +67,11 @@ lazy val keycloak = (project in file("keycloak"))
       //`spring-boot-starter-security`
     )
   )
+
+lazy val consul = (project in file("consul"))
+  .settings(baseSettings)
+  .settings(
+    libraryDependencies ++= Seq(
+      `spring-cloud-starter-consul-discovery`
+    )
+  )

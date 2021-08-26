@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: consul-test-app
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        enabled: true #enables the usage of service discovery
+        register: false # disables the registration of this app into Consul as a service
