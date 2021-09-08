@@ -67,6 +67,10 @@ object Dependencies extends AutoPlugin {
       "org.junit.jupiter" % "junit-jupiter" % "5.6.2"
     )
 
+    val junit = "junit" % "junit" % "4.12"
+    val `junit-interface` = "com.novocode" % "junit-interface" % "0.11" exclude("junit", "junit-dep")
+
+
   }
 
 }

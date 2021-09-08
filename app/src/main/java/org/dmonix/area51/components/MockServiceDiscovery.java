@@ -2,12 +2,12 @@ package org.dmonix.area51.components;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
 
-@Component
+@Service
 public class MockServiceDiscovery implements ServiceDiscovery, InitializingBean {
   @Value("${sd.hostName}")
   private String hostName;

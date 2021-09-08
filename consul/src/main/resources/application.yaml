@@ -3,7 +3,7 @@ spring:
     name: consul-test-app
   cloud:
     consul:
-      host: localhost
+      host: 10.150.6.178
       port: 8500
       discovery:
         enabled: true #enables the usage of service discovery

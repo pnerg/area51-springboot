@@ -1,3 +1,8 @@
 sd:
   hostName: "localhost"
   port: 8080
+
+example-config:
+  host: 127.0.0.1
+  port: 8080
+  interval: 69s

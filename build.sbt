@@ -20,6 +20,7 @@ val baseSettings = Seq(
   autoScalaLibrary := false,
   excludeDependencies ++= `global-excludes`,
   mainClass in (Compile, run) := Some("org.dmonix.area51.Main"),
+  testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a")),
   libraryDependencies ++= Seq(
     `spring-boot-autoconfigure`,
     `spring-boot-configuration-processor`,
@@ -40,7 +41,8 @@ val baseSettings = Seq(
     `javax.servlet-api`,
     json,
     //`tomcat-juli`,
-    `spring-boot-starter-test` % Test
+    `spring-boot-starter-test` % Test,
+    junit % Test
   )
 )
 
@@ -64,7 +66,6 @@ lazy val keycloak = (project in file("keycloak"))
   .settings(
     libraryDependencies ++= Seq(
       `keycloak-spring-boot-starter`,
-      //`spring-boot-starter-security`
     )
   )
 
