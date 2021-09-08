@@ -9,27 +9,15 @@ import java.time.Duration;
 @ConfigurationProperties("example-config")
 public class ConfigurationObject {
 
-  public String host;
-  public int port;
-  public Duration interval;
+  public final String host;
+  public final int port;
+  public final Duration interval;
 
   @ConstructorBinding
   public ConfigurationObject(String host, int port, Duration interval) {
     this.host = host;
     this.port = port;
     this.interval = interval;
-  }
-
-  public void setHost(String host) {
-    this.host = host;
-  }
-
-  public void setInterval(Duration interval) {
-    this.interval = interval;
-  }
-
-  public void setPort(int port) {
-    this.port = port;
   }
 
   @Override
